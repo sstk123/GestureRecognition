@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+
+
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="0,C,e,V,U,W,y"
+        android:textSize="20dp"/>
+
+
+
+    <ProgressBar
+        android:id="@+id/progressBar2"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.09" />
+
+    <Button
+        android:id="@+id/statusButton"
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:layout_gravity="center"
+        android:text="开始手势识别"
+        android:textSize="18sp"
+
+        />
+
+    <TextView
+        android:id="@+id/show_result"
+        android:layout_width="370dp"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:text="识别结果：\n" />
+</LinearLayout>
