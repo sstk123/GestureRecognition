@@ -6,7 +6,6 @@ public class PeaksDetect {
     	int peakNum = 0;
     	if (data.length>=7) {
         for (int k = 0; k < data.length; k++) {
-            System.out.println("............"+k);
             if (k==0) {
             }else if (k == 1 ) {
             	if (data[k] > data[k - 1] && data[k] > data[k + 1] && data[k + 1] > data[k + 2] && data[k + 2] > data[k + 3] && data[k] > minPeak) {
@@ -38,7 +37,6 @@ public class PeaksDetect {
                   }	
 
             } else  {
-                System.out.println("-------zzzzzzzzzzzzzzzz-----");
                 System.out.println(data[k-3]+"  "+data[k-2]+"  "+data[k-1]+"  "+data[k]+"  "+data[k+1]+"  "+data[k+2]+"  "+data[k+3]);
             	if ( data[k] > data[k + 1] &&data[k + 1] > data[k + 2] && data[k + 2] > data[k + 3] && data[k - 1] < data[k] && data[k - 2] < data[k - 1] && data[k - 3] < data[k - 2] && data[k] > minPeak) {
 
@@ -102,6 +100,31 @@ public class PeaksDetect {
         return peakNum;
     }
 
+    //三个端点检测
+    public static int getPeakNumSimple(ArrayList data, double minPeak, int minDisNum) {
+        int peakNum = 0;
+        if (data.size()>=7) {
+            for (int k = 0; k < data.size(); k++) {
+                if (k==0) {
+
+                } else if (k == (data.size() - 1) ) {
+
+
+                } else
+                    //if ((double)data.get(k) > (double)data.get(k+1)) {
+
+                    if ( (double)data.get(k) > (double)data.get(k+1)  && (double)data.get(k-1) < (double)data.get(k) && (double)data.get(k) > minPeak) {
+                        peakNum++;
+                        k = k + minDisNum;
+                    }
+
+                //  }
+            }
+        }else {
+            System.out.println("data is too short!!!");
+        }
+        return peakNum;
+    }
 
 }
 

@@ -355,9 +355,7 @@ for (int i=0;i<times.length;i++){
             numT++;
 //            System.out.println("154-"+times[numT]+"*****"+label[numT]);
         }
-        for (int i=0;i<times.length;i++){
-            System.out.println("155-"+times[i]+"*****"+label[i]);
-        }
+
         for (int i = 0; i < times.length - 1; i++) { // 最多做n-1趟排序
             for (int j = 0; j < times.length - 1; j++) { // 对当前无序区间score[0......length-i-1]进行排序(j的范围很关键，这个范围是在逐步缩小的)
                 if (times[j] < times[j + 1]) { // 把小的值交换到后面

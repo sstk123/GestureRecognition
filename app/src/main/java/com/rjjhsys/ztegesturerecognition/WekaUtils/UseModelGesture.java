@@ -8,10 +8,12 @@ import android.os.Environment;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.ObjectInputStream;
 
 import weka.classifiers.Classifier;
 import weka.core.Attribute;
+import weka.core.DenseInstance;
 import weka.core.FastVector;
 import weka.core.Instance;
 import weka.core.Instances;
@@ -94,8 +96,8 @@ public class UseModelGesture {
             value[i] = valueIn[i];
         }
         value[48] = getClassFastVector().indexOf("0");
-        instances.add(new Instance(1.0,value));
-        System.out.println("use91--"+instances.numInstances());
+        instances.add(new DenseInstance(1.0,value));
+//        System.out.println("use91--"+instances.numInstances());
         return instances;
     }
 
@@ -115,9 +117,13 @@ public class UseModelGesture {
 
 
 
-    public Classifier getClassifier(String fileAddress) throws IOException, ClassNotFoundException {//进行model文件的读入，以及模型的返回
-        File sdfile = Environment.getExternalStorageDirectory();//内存地址
-        Classifier classifier = (Classifier) (new ObjectInputStream(new FileInputStream(new File(sdfile,fileAddress)))).readObject();//进行文件转化为模型
-        return classifier;
-    }
+//    public Classifier getClassifier(String fileAddress) throws IOException, ClassNotFoundException {//进行model文件的读入，以及模型的返回
+//        File sdfile = Environment.getExternalStorageDirectory();//内存地址
+//        Classifier classifier = (Classifier) (new ObjectInputStream(new FileInputStream(new File(sdfile,fileAddress)))).readObject();//进行文件转化为模型
+//        return classifier;
+//    }
+public Classifier getClassifier(InputStream path) throws IOException, ClassNotFoundException {
+    Classifier classifier= (Classifier) (new ObjectInputStream(path)).readObject();
+    return classifier;
+}
 }

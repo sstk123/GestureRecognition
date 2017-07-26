@@ -1,6 +1,14 @@
 package com.rjjhsys.ztegesturerecognition;
 
-import com.rjjhsys.ztegesturerecognition.mathUtil.*;
+import com.rjjhsys.ztegesturerecognition.mathUtil.Average;
+import com.rjjhsys.ztegesturerecognition.mathUtil.Energy;
+import com.rjjhsys.ztegesturerecognition.mathUtil.MaxNum;
+import com.rjjhsys.ztegesturerecognition.mathUtil.MinNum;
+import com.rjjhsys.ztegesturerecognition.mathUtil.PeaksDetect;
+import com.rjjhsys.ztegesturerecognition.mathUtil.RMS;
+import com.rjjhsys.ztegesturerecognition.mathUtil.ReverseData;
+import com.rjjhsys.ztegesturerecognition.mathUtil.StandardDeviation;
+import com.rjjhsys.ztegesturerecognition.mathUtil.Variance;
 
 import java.util.ArrayList;
 

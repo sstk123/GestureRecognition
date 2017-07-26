@@ -16,7 +16,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:text="0,C,e,V,U,W,y"
+        android:text="O C V U e W y"
         android:textSize="20dp"/>
 
 
